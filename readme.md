@@ -4,12 +4,6 @@
 
 Instructor: Alan Badillo Salas (dragonnomada@gmail.com)
 
-## Grupo de Whatsapp
-
-![Whatsapp](./assets/whatsapp.jpeg)
-
-[https://chat.whatsapp.com/DtOSVnuYkHx3XLi5XXJrmX](https://chat.whatsapp.com/DtOSVnuYkHx3XLi5XXJrmX)
-
 ## Presentaciones
 
 1. [Herencia](https://slides.com/d/WAnPWzI/live)
@@ -17,3 +11,9 @@ Instructor: Alan Badillo Salas (dragonnomada@gmail.com)
 ## Códigos
 
 * [Clases - Sólo Atributos](https://replit.com/@DragonNomada/Clases-Solo-Atributos?v=1)
+
+## Grupo de Whatsapp
+
+![Whatsapp](./assets/whatsapp.jpeg)
+
+[https://chat.whatsapp.com/DtOSVnuYkHx3XLi5XXJrmX](https://chat.whatsapp.com/DtOSVnuYkHx3XLi5XXJrmX)
