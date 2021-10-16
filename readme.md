@@ -13,3 +13,7 @@ Instructor: Alan Badillo Salas (dragonnomada@gmail.com)
 ## Presentaciones
 
 1. [Herencia](https://slides.com/d/WAnPWzI/live)
+
+## Códigos
+
+* [Clases - Sólo Atributos](https://replit.com/@DragonNomada/Clases-Solo-Atributos?v=1)
