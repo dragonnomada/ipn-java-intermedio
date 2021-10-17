@@ -1,4 +1,4 @@
-# Curso de Java Básico del IPN CIC
+# Curso de Java Intermedio del IPN CIC
 
 ![Logo](./assets/logo.png)
 
