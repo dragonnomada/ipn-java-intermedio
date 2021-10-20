@@ -4,6 +4,32 @@
 
 Instructor: Alan Badillo Salas (dragonnomada@gmail.com)
 
+## Ejercicios
+
+> Sesión 1
+
+```txt
+*1. Ingresa a hackerrank y crea una cuenta*
+
+Ingresa
+
+https://www.hackerrank.com
+
+Puedes iniciar sesión con Google o Facebook
+
+*2. Resuelve el problema Welcome to Java!*
+
+https://www.hackerrank.com/challenges/welcome-to-java/problem
+
+*3. Resuelve el problema Java Stdin and Stdout I*
+
+https://www.hackerrank.com/challenges/java-stdin-and-stdout-1/problem
+
+*4. Resuelve el problema Java Stdin and Stdout II*
+
+https://www.hackerrank.com/challenges/java-stdin-stdout/problem
+```
+
 ## Presentaciones
 
 1. [Herencia](https://slides.com/d/WAnPWzI/live)
