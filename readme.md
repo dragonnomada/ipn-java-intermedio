@@ -32,7 +32,8 @@ https://www.hackerrank.com/challenges/java-stdin-stdout/problem
 
 ## Presentaciones
 
-1. [Herencia](https://slides.com/d/WAnPWzI/live)
+1. [Herencia](https://slides.com/dragonnomada123/ipn-javai-herencia)
+2. [Interfaces](https://slides.com/dragonnomada123/java-intermedio-interfaces)
 
 ## Códigos
 
