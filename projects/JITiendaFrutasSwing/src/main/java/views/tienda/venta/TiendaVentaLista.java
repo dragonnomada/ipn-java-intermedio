@@ -1,13 +1,27 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package views.tienda.venta;
 
-/**
- *
- * @author lanz
- */
-public class TiendaVentaLista {
+import java.awt.BorderLayout;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
+public class TiendaVentaLista extends JPanel {
+    
+    JList<String> listaVentas;
+    JScrollPane scroll;
+    
+    public TiendaVentaLista() {
+        super();
+        
+        this.listaVentas = new JList<String>();
+        
+        this.scroll = new JScrollPane(this.listaVentas);
+        
+        BorderLayout layout = new BorderLayout();
+        
+        this.setLayout(layout);
+        
+        this.add(this.scroll, BorderLayout.CENTER);
+    }
     
 }

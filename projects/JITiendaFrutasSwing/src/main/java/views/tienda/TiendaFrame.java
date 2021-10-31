@@ -1,28 +1,40 @@
 package views.tienda;
 
+import controllers.TiendaFrutaController;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
+import javax.swing.JSplitPane;
 
 public class TiendaFrame extends JFrame {
+    
+    TiendaFrutaController controller;
     
     TiendaTitle tiendaTitle;
     TiendaFrutas tiendaFrutas;
     TiendaVenta tiendaVenta;
+    JSplitPane split;
     
     TiendaFrame() {
         super();
         
+        this.controller = new TiendaFrutaController();
+        
         this.tiendaTitle = new TiendaTitle();
         
-        this.tiendaFrutas = new TiendaFrutas();
+        this.tiendaFrutas = new TiendaFrutas(this.controller);
         
         this.tiendaVenta = new TiendaVenta();
         
-        this.add(this.tiendaTitle, BorderLayout.NORTH);
-        this.add(this.tiendaFrutas, BorderLayout.EAST);
-        this.add(this.tiendaVenta, BorderLayout.WEST);
+        this.split = new JSplitPane(
+            JSplitPane.HORIZONTAL_SPLIT, 
+            this.tiendaFrutas, 
+            this.tiendaVenta
+        );
         
-        this.setSize(600, 800);
+        this.add(this.tiendaTitle, BorderLayout.NORTH);
+        this.add(this.split, BorderLayout.CENTER);
+        
+        this.setSize(600, 400);
         
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
     }

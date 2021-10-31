@@ -1,5 +1,6 @@
 package views.tienda.frutas;
 
+import controllers.TiendaFrutaController;
 import java.awt.BorderLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -10,7 +11,7 @@ public class TiendaFrutasListaTitle extends JPanel {
     JLabel titleLabel;
     JButton addFrutaButton;
     
-    public TiendaFrutasListaTitle() {
+    public TiendaFrutasListaTitle(TiendaFrutaController controller) {
         super();
         
         this.titleLabel = new JLabel("Frutas en Venta");
@@ -18,6 +19,8 @@ public class TiendaFrutasListaTitle extends JPanel {
         
         this.add(this.titleLabel, BorderLayout.EAST);
         this.add(this.addFrutaButton, BorderLayout.WEST);
+        
+        controller.handleAddFrutaButton(addFrutaButton);
     }
     
 }

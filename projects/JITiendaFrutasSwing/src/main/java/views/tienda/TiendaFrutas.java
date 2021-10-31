@@ -1,6 +1,7 @@
 package views.tienda;
 
-import java.awt.BorderLayout;
+import controllers.TiendaFrutaController;
+import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import views.tienda.frutas.TiendaFrutasLista;
 import views.tienda.frutas.TiendaFrutasListaTitle;
@@ -10,14 +11,18 @@ public class TiendaFrutas extends JPanel {
     TiendaFrutasListaTitle listaFrutasTitle;
     TiendaFrutasLista listaFrutas;
     
-    public TiendaFrutas() {
+    public TiendaFrutas(TiendaFrutaController controller) {
         super();
         
-        this.listaFrutasTitle = new TiendaFrutasListaTitle();
+        this.listaFrutasTitle = new TiendaFrutasListaTitle(controller);
         this.listaFrutas = new TiendaFrutasLista();
         
-        this.add(this.listaFrutasTitle, BorderLayout.NORTH);
-        this.add(this.listaFrutas, BorderLayout.SOUTH);
+        BoxLayout layout = new BoxLayout(this, BoxLayout.Y_AXIS);
+        
+        this.setLayout(layout);
+        
+        this.add(this.listaFrutasTitle);
+        this.add(this.listaFrutas);
     }
     
 }
