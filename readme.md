@@ -6,9 +6,9 @@ Instructor: Alan Badillo Salas (dragonnomada@gmail.com)
 
 ## Presentaciones
 
-1. [Herencia](https://slides.com/dragonnomada123/ipn-javai-herencia)
-2. [Polimorfismo](https://slides.com/dragonnomada123/java-intermedio-polimorfismo)
-3. [Interfaces](https://slides.com/dragonnomada123/java-intermedio-interfaces)
+1. [Herencia](https://slides.com/dragonnomada123/ipn-javai-herencia/fullscreen)
+2. [Polimorfismo](https://slides.com/dragonnomada123/java-intermedio-polimorfismo/fullscreen)
+3. [Interfaces](https://slides.com/dragonnomada123/java-intermedio-interfaces/fullscreen)
 
 ## Ejercicios
 
