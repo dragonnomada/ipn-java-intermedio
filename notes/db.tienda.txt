@@ -1,0 +1,36 @@
+DB: Tienda
+
+Productos:
++ ProductoID i PK A
++ Codigo v(255) U
++ Nombre v(255)
++ Precio d D(0)
++ Activo b D(1)
+
+Clientes:
++ ClienteID i PK A
++ Nombre v(255) U
++ Correo v(255) U
++ Direccion v(255)
++ Telefono v(255)
+
+Ordenes:
++ OrdenID i PK A
++ Folio v(255) U
++ ClienteID i
++ CarritoID i
+
+Carritos:
++ CarritoID i PK A
++ ClientID i
+
+CarritoProductos:
++ CarritoProductosID i PK A
++ CarritoID i
++ ProductoID i U
++ Cantidad i
+
+Folios:
+FolioID i PK A
+Folio v(255) U
+FolioPrevio i U

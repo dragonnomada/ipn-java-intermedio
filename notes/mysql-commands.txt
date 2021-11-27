@@ -1,0 +1,99 @@
+mysql -u root -p
+
+create database tienda;
+
+show databases;
+
+use tienda;
+
+create table Productos (
+  -> ProductoID int PRIMARY KEY AUTO_INCREMENT,
+  -> Codigo varchar(255),
+  -> Nombre varchar(255),
+  -> Precio double,
+  -> Activo bool);
+
+show tables;
+
+insert into Productos (Codigo, Nombre, Precio, Activo)
+    -> values ('A123', 'Coca Cola', 17.5, 1);
+
+insert into Productos (Codigo, Nombre, Precio, Activo)
+    -> values ('B456', 'Galletas Marias', 14.67, 1);
+
+select * from Productos;
++------------+--------+-----------------+--------+--------+
+| ProductoID | Codigo | Nombre          | Precio | Activo |
++------------+--------+-----------------+--------+--------+
+|          1 | A123   | Coca Cola       |   17.5 |      1 |
+|          2 | B456   | Galletas Marias |  14.67 |      1 |
++------------+--------+-----------------+--------+--------+
+
+update Productos set Nombre='Coca Cola 600ml'
+    -> where Codigo='A123';
+
+select * from Productos;
++------------+--------+-----------------+--------+--------+
+| ProductoID | Codigo | Nombre          | Precio | Activo |
++------------+--------+-----------------+--------+--------+
+|          1 | A123   | Coca Cola 600ml |   17.5 |      1 |
+|          2 | B456   | Galletas Marias |  14.67 |      1 |
++------------+--------+-----------------+--------+--------+
+
+update Productos set Activo=0
+    -> where Codigo='457';
+
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+update Productos set Activo=0
+    -> where Codigo='456';
+
+Rows matched: 0  Changed: 0  Warnings: 0
+
+update Productos set Activo=0
+    -> where Codigo='B456';
+
+select * from Productos;
++------------+--------+-----------------+--------+--------+
+| ProductoID | Codigo | Nombre          | Precio | Activo |
++------------+--------+-----------------+--------+--------+
+|          1 | A123   | Coca Cola 600ml |   17.5 |      1 |
+|          2 | B456   | Galletas Marias |  14.67 |      0 |
++------------+--------+-----------------+--------+--------+
+
+insert into Productos (Codigo, Nombre)
+    -> values ('C770', 'Gansitto');
+Query OK, 1 row affected (0.07 sec)
+
+select * from Productos;
++------------+--------+-----------------+--------+--------+
+| ProductoID | Codigo | Nombre          | Precio | Activo |
++------------+--------+-----------------+--------+--------+
+|          1 | A123   | Coca Cola 600ml |   17.5 |      1 |
+|          2 | B456   | Galletas Marias |  14.67 |      0 |
+|          3 | C770   | Gansitto        |   NULL |   NULL |
++------------+--------+-----------------+--------+--------+
+3 rows in set (0.00 sec)
+
+delete from Productos where Codigo='C770';
+Query OK, 1 row affected (0.09 sec)
+
+select * from Productos;
++------------+--------+-----------------+--------+--------+
+| ProductoID | Codigo | Nombre          | Precio | Activo |
++------------+--------+-----------------+--------+--------+
+|          1 | A123   | Coca Cola 600ml |   17.5 |      1 |
+|          2 | B456   | Galletas Marias |  14.67 |      0 |
++------------+--------+-----------------+--------+--------+
+
+describe Productos;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| ProductoID | int(11)      | NO   | PRI | NULL    | auto_increment |
+| Codigo     | varchar(255) | NO   | UNI | NULL    |                |
+| Nombre     | varchar(255) | NO   |     | NULL    |                |
+| Precio     | double       | YES  |     | 0       |                |
+| Activo     | tinyint(1)   | YES  |     | 1       |                |
++------------+--------------+------+-----+---------+----------------+

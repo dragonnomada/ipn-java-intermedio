@@ -1,0 +1,18 @@
+# Búsquedas
+
+SELECT <campos> FROM <tabla> [<restricciones>];
+
+select CustomerID, ContactName, Country from Customers;
+--> DEVUELVE UNA TABLA CON TODOS LOS REGISTROS, PERO SÓLO CON 3 CAMPOS
+
+CustomerID | ContactName | Country
+---------- + ----------- + -------
+1          | Maria Ande  | Germany
+2          | Ana Trujill | Mexico
+3          | Antonio Mor | Mexico
+...
+
+select * from Customers where Country='Mexico';
+
+select ContactName, Address from Customers where Country='Mexico' and City='Guadalajara';
+
