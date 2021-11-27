@@ -23,6 +23,12 @@ public class TestProductoModel {
         
         System.out.println(p2);
         
+        ProductoModel p3 = new ProductoModel(conn);
+        
+        p3.create("B456", "Galletas Marias", 14);
+        
+        System.out.println(p3);
+        
         conn.close();
         
     }
