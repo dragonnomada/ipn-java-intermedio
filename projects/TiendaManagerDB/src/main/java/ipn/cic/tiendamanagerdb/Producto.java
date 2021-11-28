@@ -1,7 +1,5 @@
 package ipn.cic.tiendamanagerdb;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 /*
 describe Productos;
 +------------+--------------+------+-----+---------+----------------+
@@ -15,7 +13,7 @@ describe Productos;
 +------------+--------------+------+-----+---------+----------------+
 */
 
-public class Producto {
+public abstract class Producto {
     
     protected int productoId;
     protected String codigo;
@@ -33,21 +31,13 @@ public class Producto {
                 this.activo);
     }
     
-    public boolean updateNombre(String nombre) {
-        return false;
-    }
+    public abstract boolean updateNombre(String nombre);
     
-    public boolean updatePrecio(double precio) {
-        return false;
-    }
+    public abstract boolean updatePrecio(double precio);
     
-    public boolean updateActivo(boolean activo) {
-        return false;
-    }
+    public abstract boolean updateActivo(boolean activo);
     
-    public boolean delete() {
-        return false;
-    }
+    public abstract boolean delete();
     
     public int getProductoId() {
         return productoId;

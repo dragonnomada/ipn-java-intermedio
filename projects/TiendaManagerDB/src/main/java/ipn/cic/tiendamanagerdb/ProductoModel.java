@@ -5,8 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
-public class ProductoModel extends Producto {
+public final class ProductoModel extends Producto {
 
     private final Connection conn;
 
@@ -24,6 +25,111 @@ public class ProductoModel extends Producto {
         } catch (SQLException ex) {
             return null;
         }
+    }
+    
+    public static Producto findById(Connection conn, int productoId) {
+        ProductoModel producto = new ProductoModel(conn);
+        
+        try {
+            producto.fetchById(productoId);
+            return producto;
+        } catch (SQLException ex) {
+            return null;
+        }
+    }
+    
+    public static Producto findByCodigo(Connection conn, String codigo) {
+        ProductoModel producto = new ProductoModel(conn);
+        
+        try {
+            producto.fetchByCodigo(codigo);
+            return producto;
+        } catch (SQLException ex) {
+            return null;
+        }
+    }
+    
+    public static ArrayList<Producto> findAll(Connection conn) {
+        ArrayList<Producto> productos = new ArrayList<>();
+        
+        String sql = "SELECT ProductoID FROM Productos";
+        
+        try {
+            PreparedStatement statement = conn.prepareStatement(sql);
+            
+            ResultSet resultSet = statement.executeQuery();
+            
+            while (resultSet.next()) {
+                int productoId = resultSet.getInt("ProductoID");
+                
+                ProductoModel producto = new ProductoModel(conn);
+                
+                producto.fetchById(productoId);
+                
+                productos.add(producto);
+            }
+        } catch(SQLException ex) {
+            return productos;
+        }
+        
+        return productos;
+    }
+    
+    public static ArrayList<Producto> findByNombre(Connection conn, String nombre) {
+        ArrayList<Producto> productos = new ArrayList<>();
+        
+        String sql = "SELECT ProductoID FROM Productos WHERE Nombre LIKE ?";
+        
+        try {
+            PreparedStatement statement = conn.prepareStatement(sql);
+            
+            statement.setString(1, nombre);
+            
+            ResultSet resultSet = statement.executeQuery();
+            
+            while (resultSet.next()) {
+                int productoId = resultSet.getInt("ProductoID");
+                
+                ProductoModel producto = new ProductoModel(conn);
+                
+                producto.fetchById(productoId);
+                
+                productos.add(producto);
+            }
+        } catch(SQLException ex) {
+            return productos;
+        }
+        
+        return productos;
+    }
+    
+    public static ArrayList<Producto> findByPrecio(Connection conn, double precioMin, double precioMax) {
+        ArrayList<Producto> productos = new ArrayList<>();
+        
+        String sql = "SELECT ProductoID FROM Productos WHERE Precio >= ? AND Precio <= ?";
+        
+        try {
+            PreparedStatement statement = conn.prepareStatement(sql);
+            
+            statement.setDouble(1, precioMin);
+            statement.setDouble(2, precioMax);
+            
+            ResultSet resultSet = statement.executeQuery();
+            
+            while (resultSet.next()) {
+                int productoId = resultSet.getInt("ProductoID");
+                
+                ProductoModel producto = new ProductoModel(conn);
+                
+                producto.fetchById(productoId);
+                
+                productos.add(producto);
+            }
+        } catch(SQLException ex) {
+            return productos;
+        }
+        
+        return productos;
     }
 
     public void create(String codigo, String nombre, double precio) throws SQLException {
