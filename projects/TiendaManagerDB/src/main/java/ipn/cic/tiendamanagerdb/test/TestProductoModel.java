@@ -1,5 +1,6 @@
 package ipn.cic.tiendamanagerdb.test;
 
+import ipn.cic.tiendamanagerdb.Producto;
 import ipn.cic.tiendamanagerdb.ProductoModel;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -25,9 +26,19 @@ public class TestProductoModel {
         
         ProductoModel p3 = new ProductoModel(conn);
         
-        p3.create("B456", "Galletas Marias", 14);
+        p3.create("C773", "Gansito 3", 10);
         
         System.out.println(p3);
+        
+        Producto p4 = ProductoModel.create(conn, "X996", "Compaq 6", 14801.93);
+        
+        System.out.println(p4);
+        
+        if (p4.updateNombre("Compaq 6 MODIFICADO")) {
+            System.out.println(p4);
+        } else {
+            System.out.println("Error al actualizar el nombre del producto 4");
+        }
         
         conn.close();
         
